@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Royal Taste – Kitchen Dashboard</title>
+    <link rel="stylesheet" href="css/kitchen.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="brand">
+        <strong>ROYAL TASTE</strong><span>Kitchen Dashboard</span>
+      </div>
+      <div class="clock">
+        <div id="date"></div>
+        <div id="time"></div>
+      </div>
+      <div class="controls">
+        <button id="autoBtn" class="btn" type="button" aria-pressed="true">
+          Auto Refresh: ON
+        </button>
+        <span class="muted">Last Updated: <b id="updated">--</b></span>
+        <button id="refreshBtn" class="btn" type="button">Refresh Now</button>
+        <button id="clearBtn" class="btn danger" type="button">
+          Clear Completed
+        </button>
+      </div>
+    </header>
+    <main>
+      <section class="stats" id="stats" aria-label="Today's summary"></section>
+      <section class="toolbar">
+        <label class="sr-only" for="search">Search orders</label>
+        <input
+          id="search"
+          type="search"
+          placeholder="Search orders (ID, customer, table, food)..."
+        />
+        <div id="filters" class="filters" role="group" aria-label="Filter">
+          <button class="chip active" data-f="all" type="button">All</button>
+          <button class="chip" data-f="pending" type="button">Pending</button>
+          <button class="chip" data-f="completed" type="button">
+            Completed
+          </button>
+        </div>
+      </section>
+      <div class="cols">
+        <section id="incomingSec">
+          <h2>Incoming Orders</h2>
+          <div id="incoming" class="list"></div>
+        </section>
+        <section id="doneSec">
+          <h2>Sold Today</h2>
+          <div id="completed" class="list"></div>
+        </section>
+      </div>
+    </main>
+    <dialog id="confirmDlg">
+      <p>Are you sure you want to remove today's completed orders?</p>
+      <div class="actions">
+        <button id="noBtn" class="btn" type="button">Cancel</button
+        ><button id="yesBtn" class="btn danger" type="button">Remove</button>
+      </div>
+    </dialog>
+    <script src="js/storage.js"></script>
+    <script src="js/models.js"></script>
+    <script src="js/kitchen.js"></script>
+  </body>
+</html>
