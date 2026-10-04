@@ -1,5 +1,8 @@
 # Royal Taste Hotel – Digital Restaurant Ordering System
 
+open client side server use this link : https://tamil73388.github.io/royal-taste-hotel/client.html
+open kitchen side server use this like : https://tamil73388.github.io/royal-taste-hotel/kitchen.html
+
 Frontend-only project: HTML5, CSS3, vanilla JavaScript (ES6+ classes), fetch(), localStorage.
 
 ## Run
